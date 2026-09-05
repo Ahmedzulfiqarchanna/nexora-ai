@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NEXORA AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">N</div>
+
+            <div>
+                <h2>NEXORA</h2>
+                <span>AI ASSISTANT</span>
+            </div>
+        </div>
+
+        <button id="newChatBtn" class="new-chat-btn">
+            <span>＋</span>
+            New Chat
+        </button>
+
+        <div class="sidebar-section">
+
+            <div class="section-title">
+                RECENT CHATS
+            </div>
+
+            <div id="historyList" class="history-list"></div>
+
+        </div>
+
+        <div class="sidebar-footer">
+
+            <button class="footer-item" id="themeBtn">
+                <span>◐</span>
+                Dark / Light
+            </button>
+
+            <button class="footer-item" id="clearBtn">
+                <span>🗑</span>
+                Clear Chats
+            </button>
+
+            <button class="footer-item" id="helpBtn">
+                <span>?</span>
+                Help
+            </button>
+
+            <div class="version">
+                NEXORA AI • v2.0
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+
+            <button id="menuBtn" class="menu-btn">
+                ☰
+            </button>
+
+            <div class="mobile-brand">
+                <div class="small-logo">N</div>
+                <strong>NEXORA AI</strong>
+            </div>
+
+            <div class="model-name">
+                <strong>NEXORA</strong>
+                <span>AI</span>
+            </div>
+
+            <div class="status">
+                <span class="status-dot"></span>
+                AI Online
+            </div>
+
+        </header>
+
+
+        <!-- CHAT -->
+        <section id="chatBox" class="chat-container">
+
+            <div id="welcome" class="welcome">
+
+                <div class="hero-logo">
+                    N
+                </div>
+
+                <h1>
+                    How can I help you?
+                </h1>
+
+                <p>
+                    I'm <strong>NEXORA AI</strong>, your intelligent
+                    digital assistant.
+                </p>
+
+
+                <div class="suggestions">
+
+                    <button onclick="useSuggestion('Explain Python in simple words')">
+                        <span class="suggestion-icon">🐍</span>
+                        <div>
+                            <b>Learn Python</b>
+                            <small>Explain programming concepts</small>
+                        </div>
+                    </button>
+
+
+                    <button onclick="useSuggestion('Help me create a professional website')">
+                        <span class="suggestion-icon">💻</span>
+                        <div>
+                            <b>Build a Website</b>
+                            <small>Get coding assistance</small>
+                        </div>
+                    </button>
+
+
+                    <button onclick="useSuggestion('Explain artificial intelligence in simple words')">
+                        <span class="suggestion-icon">🧠</span>
+                        <div>
+                            <b>Learn AI</b>
+                            <small>Understand technology</small>
+                        </div>
+                    </button>
+
+
+                    <button onclick="useSuggestion('Help me solve a difficult problem step by step')">
+                        <span class="suggestion-icon">💡</span>
+                        <div>
+                            <b>Solve Problems</b>
+                            <small>Get step-by-step help</small>
+                        </div>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- INPUT -->
+        <div class="input-area">
+
+            <div class="input-wrapper">
+
+                <textarea
+                    id="messageInput"
+                    placeholder="Message NEXORA AI..."
+                    rows="1"></textarea>
+
+                <button id="sendBtn" class="send-btn">
+                    ➤
+                </button>
+
+            </div>
+
+            <div class="input-info">
+
+                <span>
+                    NEXORA AI can make mistakes.
+                </span>
+
+                <span>
+                    Enter ↵ to send • Shift + Enter for new line
+                </span>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- HELP MODAL -->
+<div id="helpModal" class="modal">
+
+    <div class="modal-box">
+
+        <button id="closeHelp" class="close-btn">×</button>
+
+        <h2>How to use NEXORA AI</h2>
+
+        <p>💬 Type your question and press Enter.</p>
+        <p>⌨️ Use Shift + Enter for a new line.</p>
+        <p>🆕 New Chat starts a fresh conversation.</p>
+        <p>🗑 Clear Chats removes the current conversation.</p>
+        <p>◐ Dark / Light changes the interface theme.</p>
+
+    </div>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
